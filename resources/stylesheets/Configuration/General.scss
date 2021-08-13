@@ -1,0 +1,94 @@
+html {
+  font-size: $font-size-standard;
+  background: $color-bright;
+  color: $color-dark;
+  font-family: $font-family-standard;
+}
+
+body {
+  line-height: $line-height-standard;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  text-decoration: underline;
+  color: $color-dark;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:focus,
+button:focus {
+  outline-color: $color-secondary;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+i,
+em {
+  font-style: italic;
+}
+
+strong em,
+strong i,
+b em,
+b i,
+em strong,
+em b,
+i strong,
+i b {
+  font-weight: bold;
+  font-style: italic;
+}
+
+hr {
+  margin-bottom: $spacing-medium;
+  padding-bottom: $spacing-medium;
+  display: block;
+  border-top: 1px solid;
+}
+
+iframe,
+img {
+  border: 0;
+  max-width: 100%;
+  display: inline-block;
+}
+
+audio,
+canvas,
+video,
+img {
+  height: auto;
+  vertical-align: bottom;
+}
+
+address {
+  font-style: normal;
+}
+
+ul {
+  list-style: square inside;
+}
+
+ol {
+  list-style: decimal inside;
+}
+
+// sass-lint:disable no-vendor-prefixes
+::-moz-selection {
+  background: $color-secondary;
+  color: $color-dark;
+  text-shadow: none;
+}
+
+::selection {
+  background: $color-secondary;
+  color: $color-dark;
+  text-shadow: none;
+}

@@ -1,0 +1,71 @@
+version: '3.3'
+
+networks:
+  web:
+    external: true
+  stack:
+    external: false
+
+volumes:
+  database:
+
+services:
+  database:
+    container_name: temyga_database
+    image: mysql:8.0
+    working_dir: /var/www/html
+    volumes:
+      - database:/var/lib/mysql:cached
+    networks:
+      - stack
+    restart: always
+    environment:
+      - MYSQL_RANDOM_ROOT_PASSWORD=true
+      - MYSQL_DATABASE=temyga
+      - MYSQL_USER=temyga
+      - MYSQL_PASSWORD=temyga
+    command: mysqld --character-set-server=utf8 --collation-server=utf8_general_ci --sql_mode=''
+
+  application:
+    container_name: temyga_application
+    build:
+      context: .
+      dockerfile: ./docker/application/application.Dockerfile
+      args:
+        USER_ID: $USER_ID
+        GROUP_ID: $GROUP_ID
+    depends_on:
+      - database
+    extra_hosts:
+      - 'temyga.localhost:127.0.0.1'
+      - 'temyga.localhost.visuellverstehen.de:127.0.0.1'
+    networks:
+      - web
+      - stack
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.temyga.rule=Host(`temyga.localhost`,`temyga.localhost.visuellverstehen.de`)"
+      - "traefik.http.routers.temyga.entrypoints=web"
+      - "traefik.http.services.temyga.loadbalancer.server.port=80"
+      - "traefik.docker.network=web"
+    working_dir: /var/www/html
+    volumes:
+      - ./docker/application/php.ini:/usr/local/etc/php/php.ini:cached
+      - ./:/var/www/html
+    restart: always
+
+  tooling:
+    container_name: temyga_tooling
+    build:
+      context: .
+      dockerfile: ./docker/tooling/tooling.Dockerfile
+      args:
+        USER_ID: $USER_ID
+        GROUP_ID: $GROUP_ID
+    networks:
+      - stack
+    tty: true
+    working_dir: /var/www/html
+    volumes:
+      - ./:/var/www/html
+    restart: always
