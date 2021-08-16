@@ -30,7 +30,7 @@ services:
     container_name: temyga_application
     build:
       context: .
-      dockerfile: ./docker/application/application.Dockerfile
+      dockerfile: docker/application/application.Dockerfile
       args:
         USER_ID: $USER_ID
         GROUP_ID: $GROUP_ID
@@ -58,7 +58,7 @@ services:
     container_name: temyga_tooling
     build:
       context: .
-      dockerfile: ./docker/tooling/tooling.Dockerfile
+      dockerfile: docker/tooling/tooling.Dockerfile
       args:
         USER_ID: $USER_ID
         GROUP_ID: $GROUP_ID
