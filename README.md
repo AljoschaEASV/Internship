@@ -1,9 +1,5 @@
-# temyga
+# Reason
 
-| –              | –                                       |
-| ------         | ------                                  |
-| vvcode         | temyga                                 |
-| p-number       |                                 |
-| Namespace      | `VV\Temyga`                          |
-| Live-System    | https://temyga.dev.visuellverstehen.de |
-| Test-System    | no                                      |
+This is the alternate repo for hand-in. 
+
+The live repo was made in the personal-company gitlab environment. 
