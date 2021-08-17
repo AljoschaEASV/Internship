@@ -20,6 +20,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'lastName',
         'email',
         'password',
     ];
@@ -51,16 +52,31 @@ class User extends Authenticatable
         return $this->belongsTo(Gender::class);
     }
 
+    /**
+     * 
+     *
+     * @return BelongsToMany
+     */
     public function interests(): BelongsToMany
     {
-      return $this->belongsToMany(Interest::class);
+      return $this->belongsToMany(Interest::class, 'interests_users');
     }
 
+    /**
+     * 
+     *
+     * @return HasMany
+     */
     public function gardens(): HasMany
     {
         return $this->hasMany(Garden::class);
     }
 
+    /**
+     * 
+     *
+     * @return BelongsTo
+     */
     public function address(): BelongsTo
     {
         return $this->belongsTo(Address::class);

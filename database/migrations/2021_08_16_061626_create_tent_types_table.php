@@ -17,8 +17,7 @@ class CreateTentTypesTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name');
-            $table->integer('description');
-            $table->foreignId('garden_id')->references('id')->on('gardens');
+            $table->text('description');
         });
     }
 

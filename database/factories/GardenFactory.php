@@ -2,7 +2,10 @@
 
 namespace Database\Factories;
 
+use App\Models\Amenity;
 use App\Models\Garden;
+use App\Models\TentType;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class GardenFactory extends Factory
@@ -19,10 +22,32 @@ class GardenFactory extends Factory
      *
      * @return array
      */
-    public function definition()
+    public function definition():array
     {
+        $user = User::all()->random();
+
         return [
-            //
+           'type' => $this->faker->sentence(2),
+           'size' => $this->faker->randomDigit,
+           'user_id' => $user->id,
+           'address_id' => $user->address->id,
         ];
     }
+
+      /**
+     * Configure the model factory.
+     *
+     * @return $this
+     */
+    public function configure()
+    {
+        return $this->afterCreating(function (Garden $garden) {
+            $amenity = Amenity::all()->random();
+            $tentType = TentType::all()->random();
+            
+            $garden->amenities()->attach($amenity);
+            $garden->tentTypes()->attach($tentType);
+        });
+    }
+
 }

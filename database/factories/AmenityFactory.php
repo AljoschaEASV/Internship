@@ -19,10 +19,12 @@ class AmenityFactory extends Factory
      *
      * @return array
      */
-    public function definition()
+    public function definition():array
     {
+        $icons = collect('angellist', 'angry', 'campground', 'tint', 'accusoft');
         return [
-            //
+         'name' => $this->faker->sentence(2),
+         'icon' => $icons->random(),
         ];
     }
 }

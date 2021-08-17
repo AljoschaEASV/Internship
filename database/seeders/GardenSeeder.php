@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Garden;
 use Illuminate\Database\Seeder;
 
 class GardenSeeder extends Seeder
@@ -11,8 +12,8 @@ class GardenSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run():void
     {
-        //
+        Garden::factory(10)->create();
     }
 }

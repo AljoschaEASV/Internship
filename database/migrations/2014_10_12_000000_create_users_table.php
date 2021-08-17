@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->rememberToken();
             $table->timestamps();
-            $table->string('name');
+            $table->string('first_name');
             $table->string('last_name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
@@ -27,6 +27,7 @@ class CreateUsersTable extends Migration
 
             //creating foreign keys
             $table->foreignId('gender_id')->references('id')->on('genders');
+            $table->foreignId('address_id')->references('id')->on('addresses');
            
         });
     }

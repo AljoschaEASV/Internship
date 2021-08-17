@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Interest;
 use Illuminate\Database\Seeder;
 
 class InterestSeeder extends Seeder
@@ -11,8 +12,8 @@ class InterestSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run():void
     {
-        //
+        Interest::factory(5)->create();
     }
 }

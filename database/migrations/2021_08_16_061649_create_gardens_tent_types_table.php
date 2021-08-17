@@ -4,8 +4,10 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAmenentiesGardensTable extends Migration
+class CreateGardensTentTypesTable extends Migration
 {
+
+    
     /**
      * Run the migrations.
      *
@@ -13,13 +15,14 @@ class CreateAmenentiesGardensTable extends Migration
      */
     public function up()
     {
-        Schema::create('amenenties_gardens', function (Blueprint $table) {
+        Schema::create('gardens_tent_types', function (Blueprint $table) {
             $table->timestamps();
             $table->foreignId('garden_id')->references('id')->on('gardens');
-            $table->foreignId('amenity_id')->references('id')->on('amenities');
+            $table->foreignId('tent_type_id')->references('id')->on('tent_types');
+            
+            $table->primary(['tent_type_id', 'garden_id']);
 
-            // Composite key
-            $table->primary(['garden_id', 'amenity_id']);
+           
         });
     }
 
@@ -30,6 +33,6 @@ class CreateAmenentiesGardensTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('amenenties_gardens');
+        Schema::dropIfExists('gardens_tent_types');
     }
 }

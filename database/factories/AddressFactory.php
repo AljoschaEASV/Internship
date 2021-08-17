@@ -19,10 +19,14 @@ class AddressFactory extends Factory
      *
      * @return array
      */
-    public function definition()
+    public function definition(): array
     {
         return [
-            //
+            'street' => $this->faker->streetName(),
+            'zip_code' => $this->faker->postcode,
+            'country_code' => $this->faker->countryCode,
+            'city' => $this->faker->city,
+            'street_number' => $this->faker->numberBetween(1, 100),
         ];
     }
 }
