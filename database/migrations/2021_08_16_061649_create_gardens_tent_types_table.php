@@ -6,8 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateGardensTentTypesTable extends Migration
 {
-
-    
     /**
      * Run the migrations.
      *
@@ -19,10 +17,7 @@ class CreateGardensTentTypesTable extends Migration
             $table->timestamps();
             $table->foreignId('garden_id')->references('id')->on('gardens');
             $table->foreignId('tent_type_id')->references('id')->on('tent_types');
-            
             $table->primary(['tent_type_id', 'garden_id']);
-
-           
         });
     }
 

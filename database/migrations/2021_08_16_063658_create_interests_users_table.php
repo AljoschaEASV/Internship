@@ -17,7 +17,7 @@ class CreateInterestsUsersTable extends Migration
             $table->timestamps();
             $table->foreignId('interest_id')->references('id')->on('interests');
             $table->foreignId('user_id')->references('id')->on('users');
-            
+
             // Composite key
             $table->primary(['interest_id', 'user_id']);
         });

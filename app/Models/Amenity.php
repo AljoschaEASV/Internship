@@ -21,8 +21,6 @@ class Amenity extends Model
   ];
 
   /**
-   * The Many to Many relation with Garden.
-   *
    * @return BelongsToMany
    */
   public function gardens(): BelongsToMany

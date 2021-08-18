@@ -11,7 +11,7 @@ class CreateAmenitiesGardensTable extends Migration
      *
      * @return void
      */
-    public function up():void 
+    public function up(): void
     {
         Schema::create('amenities_gardens', function (Blueprint $table) {
             $table->timestamps();

@@ -25,13 +25,12 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('profile_picture');
 
-            //creating foreign keys
+            // Create foreign keys
             $table->foreignId('gender_id')->references('id')->on('genders');
             $table->foreignId('address_id')->references('id')->on('addresses');
-           
         });
     }
-
+‚
     /**
      * Reverse the migrations.
      *

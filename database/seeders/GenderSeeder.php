@@ -14,10 +14,10 @@ class GenderSeeder extends Seeder
      *
      * @return void
      */
-    public function run():void
+    public function run(): void
     {
         DB::table('genders')->insert([
-            
+
             [
                 'id' => 1,
                 'name' => "male",
@@ -29,14 +29,14 @@ class GenderSeeder extends Seeder
                 'name' => "female",
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
-            ], 
+            ],
             [
                 'id' => 3,
                 'name' => "other",
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
-            
+
 
         ]);
     }

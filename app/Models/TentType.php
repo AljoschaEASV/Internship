@@ -6,11 +6,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-/**
- * 
- * @var 
- * @return
- */
 class TentType extends Model
 {
   use HasFactory;
@@ -24,9 +19,8 @@ class TentType extends Model
     'name',
     'description',
   ];
+
   /**
-   * 
-   *
    * @return BelongsToMany
    */
   public function gardens(): BelongsToMany

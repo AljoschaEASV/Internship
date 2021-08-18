@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\Tent_Type;
+use App\Models\TentType;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class TentTypeFactory extends Factory
@@ -12,7 +12,7 @@ class TentTypeFactory extends Factory
      *
      * @var string
      */
-    protected $model = Tent_Type::class;
+    protected $model = TentType::class;
 
     /**
      * Define the model's default state.

@@ -12,7 +12,7 @@ class InterestSeeder extends Seeder
      *
      * @return void
      */
-    public function run():void
+    public function run(): void
     {
         Interest::factory(5)->create();
     }
