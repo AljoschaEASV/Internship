@@ -5,11 +5,6 @@ node_modules/
 .env
 .env.*.php
 .env.php
-# Visual Studio Code project files
 .vscode
-
-# macOS files
 .DS_Store
-
-# PHP CS Fixer files
 .php_cs.cache
