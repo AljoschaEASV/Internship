@@ -30,7 +30,6 @@ class CreateUsersTable extends Migration
             $table->foreignId('address_id')->references('id')->on('addresses');
         });
     }
-‚
     /**
      * Reverse the migrations.
      *
