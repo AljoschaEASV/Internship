@@ -43,9 +43,9 @@ class UserFactory extends Factory
     /**
      * Configure the model factory.
      *
-     * @return $this
+     * @return UserFactory
      */
-    public function configure()
+    public function configure(): UserFactory
     {
         return $this->afterCreating(function (User $user) {
             $interest = Interest::all()->random();

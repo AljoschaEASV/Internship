@@ -37,9 +37,9 @@ class GardenFactory extends Factory
     /**
      * Configure the model factory.
      *
-     * @return $this
+     * @return GardenFactory
      */
-    public function configure()
+    public function configure(): GardenFactory
     {
         return $this->afterCreating(function (Garden $garden) {
             $amenity = Amenity::all()->random();
