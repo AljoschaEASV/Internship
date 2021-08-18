@@ -13,7 +13,6 @@ class Garden extends Model
 {
     use HasFactory;
 
-
     /**
      * The attributes that are mass assignable.
      *
@@ -22,12 +21,9 @@ class Garden extends Model
     protected $fillable = [
         'name',
         'description',
-
     ];
 
     /**
-     * 
-     *
      * @return BelongsToMany
      */
     public function amenities(): BelongsToMany
@@ -36,8 +32,6 @@ class Garden extends Model
     }
 
     /**
-     * 
-     *
      * @return BelongsToMany
      */
     public function tentTypes(): BelongsToMany
@@ -46,8 +40,6 @@ class Garden extends Model
     }
 
     /**
-     * 
-     *
      * @return BelongsTo
      */
     public function address(): BelongsTo
@@ -56,8 +48,6 @@ class Garden extends Model
     }
 
     /**
-     * 
-     *
      * @return BelongsTo
      */
     public function user(): BelongsTo

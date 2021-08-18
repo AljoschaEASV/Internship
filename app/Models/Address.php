@@ -24,14 +24,19 @@ class Address extends Model
         'street_number',
     ];
 
-    public function gardens():HasMany
-    {       
+    /**
+     * @return HasMany
+     */
+    public function gardens(): HasMany
+    {
         return $this->hasMany(Garden::class);
     }
 
-    public function user():BelongsTo
+    /**
+     * @return BelongsTo
+     */
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
-
 }

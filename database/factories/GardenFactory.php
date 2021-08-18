@@ -22,19 +22,19 @@ class GardenFactory extends Factory
      *
      * @return array
      */
-    public function definition():array
+    public function definition(): array
     {
         $user = User::all()->random();
 
         return [
-           'type' => $this->faker->sentence(2),
-           'size' => $this->faker->randomDigit,
-           'user_id' => $user->id,
-           'address_id' => $user->address->id,
+            'type' => $this->faker->sentence(2),
+            'size' => $this->faker->randomDigit,
+            'user_id' => $user->id,
+            'address_id' => $user->address->id,
         ];
     }
 
-      /**
+    /**
      * Configure the model factory.
      *
      * @return $this
@@ -44,10 +44,9 @@ class GardenFactory extends Factory
         return $this->afterCreating(function (Garden $garden) {
             $amenity = Amenity::all()->random();
             $tentType = TentType::all()->random();
-            
+
             $garden->amenities()->attach($amenity);
             $garden->tentTypes()->attach($tentType);
         });
     }
-
 }

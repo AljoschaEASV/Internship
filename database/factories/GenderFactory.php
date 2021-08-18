@@ -13,16 +13,14 @@ class GenderFactory extends Factory
      * @var string
      */
     protected $model = Gender::class;
-   
 
     /**
      * Define the model's default state.
      *
      * @return array
      */
-    public function definition():array
+    public function definition(): array
     {
-        // Returns always random genders according to the name, inclusive mixed !!
         return [
             'name' => $this->faker->randomElement(['male', 'female', 'other']),
         ];

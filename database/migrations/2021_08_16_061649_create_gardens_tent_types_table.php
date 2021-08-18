@@ -13,7 +13,7 @@ class CreateGardensTentTypesTable extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('gardens_tent_types', function (Blueprint $table) {
             $table->timestamps();
@@ -31,7 +31,7 @@ class CreateGardensTentTypesTable extends Migration
      *
      * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('gardens_tent_types');
     }

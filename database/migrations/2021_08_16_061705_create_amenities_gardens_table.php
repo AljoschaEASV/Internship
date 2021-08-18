@@ -11,7 +11,7 @@ class CreateAmenitiesGardensTable extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up():void 
     {
         Schema::create('amenities_gardens', function (Blueprint $table) {
             $table->timestamps();
@@ -28,7 +28,7 @@ class CreateAmenitiesGardensTable extends Migration
      *
      * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('amenities_gardens');
     }

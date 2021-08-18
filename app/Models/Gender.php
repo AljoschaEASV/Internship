@@ -18,14 +18,13 @@ class Gender extends Model
     protected $fillable = [
         'name',
         'description',
-        
     ];
-    
+
     /**
      * @return HasMany
      */
     public function users(): HasMany
-    {       
+    {
         return $this->hasMany(User::class);
     }
 }

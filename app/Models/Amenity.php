@@ -8,17 +8,16 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Amenity extends Model
 {
-    use HasFactory;  
+  use HasFactory;
 
-      /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-      'name',
-      'icon',
-      
+  /**
+   * The attributes that are mass assignable.
+   *
+   * @var array
+   */
+  protected $fillable = [
+    'name',
+    'icon',
   ];
 
   /**
@@ -26,8 +25,8 @@ class Amenity extends Model
    *
    * @return BelongsToMany
    */
-    public function gardens():BelongsToMany
-    {
-      return $this->belongsToMany(Garden::class, 'amenities_gardens');
-    }
+  public function gardens(): BelongsToMany
+  {
+    return $this->belongsToMany(Garden::class, 'amenities_gardens');
+  }
 }

@@ -48,23 +48,19 @@ class User extends Authenticatable
      * @return BelongsTo
      */
     public function gender(): BelongsTo
-    {       
+    {
         return $this->belongsTo(Gender::class);
     }
 
     /**
-     * 
-     *
      * @return BelongsToMany
      */
     public function interests(): BelongsToMany
     {
-      return $this->belongsToMany(Interest::class, 'interests_users');
+        return $this->belongsToMany(Interest::class, 'interests_users');
     }
 
     /**
-     * 
-     *
      * @return HasMany
      */
     public function gardens(): HasMany
@@ -73,8 +69,6 @@ class User extends Authenticatable
     }
 
     /**
-     * 
-     *
      * @return BelongsTo
      */
     public function address(): BelongsTo
