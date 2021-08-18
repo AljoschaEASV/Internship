@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\Gender;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -17,7 +16,6 @@ class GenderSeeder extends Seeder
     public function run(): void
     {
         DB::table('genders')->insert([
-
             [
                 'id' => 1,
                 'name' => "male",
@@ -36,8 +34,6 @@ class GenderSeeder extends Seeder
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
-
-
         ]);
     }
 }
