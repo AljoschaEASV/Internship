@@ -1,0 +1,16 @@
+@import 'Configuration/variables';
+
+@import
+  '~@fortawesome/fontawesome-free/scss/fontawesome.scss',
+  '~@fortawesome/fontawesome-free/scss/regular.scss',
+  '~@fortawesome/fontawesome-free/scss/solid.scss',
+  '~@fortawesome/fontawesome-free/scss/brands.scss';
+
+@import
+  '~minireset.css/minireset.sass',
+  'Configuration/mixins',
+  'Configuration/reset',
+  'Configuration/general';
+@import
+  'Blocks/logo',
+  'Blocks/navigation';

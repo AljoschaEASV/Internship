@@ -8,23 +8,23 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class TentType extends Model
 {
-  use HasFactory;
+    use HasFactory;
 
-  /**
-   * The attributes that are mass assignable.
-   *
-   * @var array
-   */
-  protected $fillable = [
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
     'name',
     'description',
   ];
 
-  /**
-   * @return BelongsToMany
-   */
-  public function gardens(): BelongsToMany
-  {
-    return $this->belongsToMany(Garden::class, 'gardens_tent_types');
-  }
+    /**
+     * @return BelongsToMany
+     */
+    public function gardens(): BelongsToMany
+    {
+        return $this->belongsToMany(Garden::class, 'gardens_tent_types');
+    }
 }

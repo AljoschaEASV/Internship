@@ -1,10 +1,11 @@
 .DS_Store
 docker-compose.override.yml
 vendor/
-node_modules/
 .env
 .env.*.php
 .env.php
 .vscode
 .DS_Store
 .php_cs.cache
+.idea
+node_modules
