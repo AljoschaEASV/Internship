@@ -5,15 +5,15 @@ namespace App\View\Components;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\View\Component;
 
-class AppLayout extends Component
+class GardenCard extends Component
 {
     /**
-     * Get the view / contents that represents the component.
+     * Get the view / contents that represent the component.
      *
      * @return Factory
      */
     public function render(): Factory
     {
-        return view('components.app');
+        return view('components.garden-card');
     }
 }
