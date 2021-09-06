@@ -23,9 +23,7 @@ class TentTypeSeeder extends Seeder
                 'description' => "Small tents are for 1-3 persons. ",
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
-                
             ],
-
         ]);
     }
 }

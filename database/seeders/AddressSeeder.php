@@ -12,7 +12,7 @@ class AddressSeeder extends Seeder
      *
      * @return void
      */
-    public function run():void
+    public function run(): void
     {
         Address::factory(10)->create();
     }

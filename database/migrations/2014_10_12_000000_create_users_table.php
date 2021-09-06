@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->date('date_of_birth');
             $table->string('password');
             $table->string('profile_picture');
-            
+
             // Create foreign keys
             $table->foreignId('gender_id')->references('id')->on('genders');
             $table->foreignId('address_id')->references('id')->on('addresses');

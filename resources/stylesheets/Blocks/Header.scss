@@ -1,0 +1,38 @@
+.header__search {
+    position: absolute;
+    top: 200px;
+    width: 100%;
+}
+
+.header__search-inner {
+    max-width: $container-max-width;
+    display: flex;
+    margin: 0 auto;
+}
+
+.header__search-input {
+    border: none;
+    width: 100%;
+    background-color: $color-light;
+    padding: $spacing-medium + $spacing-small;
+    font-size: $font-size-m;
+}
+
+.header__search-button {
+    color: $color-light;
+    background-color: $color-secondary;
+    cursor: pointer;
+    transition: filter 200ms ease;
+
+    &:hover {
+        filter: brightness(120%);
+    }
+}
+
+.header__image {
+    object-fit: cover;
+    object-position: bottom;
+    height: 750px;
+    width: 100%;
+    position: relative;
+}

@@ -1,0 +1,16 @@
+.button {
+    color: $color-light;
+    background-color: $color-secondary;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+
+    &:hover {
+        background-color: $color-secondary;
+        color: $color-light;
+    }
+    
+    &__search {
+        min-height: $elements-height-medium;
+    }
+}
