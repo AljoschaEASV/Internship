@@ -31,6 +31,7 @@ class GardenFactory extends Factory
             'size' => $this->faker->randomDigit,
             'user_id' => $user->id,
             'address_id' => $user->address->id,
+            'image' =>  'http://lorempixel.com/' . random_int(600, 1000) . '/' . random_int(600, 1000) . '/nature'
         ];
     }
 

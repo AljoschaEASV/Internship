@@ -19,6 +19,7 @@ class Garden extends Model
     protected $fillable = [
         'name',
         'description',
+        'image',
     ];
 
     /**

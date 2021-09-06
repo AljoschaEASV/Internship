@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Garden;
 use Illuminate\Contracts\Support\Renderable;
-use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -25,8 +24,6 @@ class HomeController extends Controller
      */
     public function index(): Renderable
     {
-        return view('home', [
-            'gardens' => Garden::all()
-        ]);
+        return view('home')->with('gardens', Garden::take(5)->get());
     }
 }

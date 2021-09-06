@@ -1,0 +1,30 @@
+.gardens {
+    margin: $spacing-x-large 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: $spacing-medium;
+}
+
+.gardens__card {
+    flex: 1 1 0;
+    min-width: 400px;
+    height: 300px;
+    position: relative;
+}
+
+.gardens__card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gardens__card-caption {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    color: $color-light;
+    padding: $spacing-medium;
+    padding-top: $spacing-x-large;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), transparent);
+}

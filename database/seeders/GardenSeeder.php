@@ -12,7 +12,7 @@ class GardenSeeder extends Seeder
      *
      * @return void
      */
-    public function run():void
+    public function run(): void
     {
         Garden::factory(10)->create();
     }

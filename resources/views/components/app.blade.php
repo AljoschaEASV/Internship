@@ -10,54 +10,43 @@
 
     <title>TentMyGarden - Wo Zelte Gärten finden</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('images/all.js') }}" defer></script>
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
-<body>
-<header>
-    <nav>
-        <ul>
-            <li><a href="#">TeMyGa (Home)</a></li>
-            <li><a href="#">Vermieten</a></li>
-            <li><a href="#">Mieten</a></li>
-            <li><a href="#">Hilfe</a></li>
-            <li><a href="#">Anmeldung</a></li>
-            <li><a href="#">Selber Vermieten</a></li>
+    <body>
+        {{ $slot }}
+        <footer class="footer">
+            <div class="footer__inner">
+                <section class="footer__section">
+                    <h4 class="footer__heading">Folge uns für Inspiration</h4>
+                        <div class="footer__section-items">
+                            <a class="link link--light" href="#"><i class="fab fa-facebook fa-2x" alt="Das Facebook Logo"></i></a>
+                            <a class="link link--light" href="#"><i class="fab fa-twitter fa-2x" alt="Das Twitter Logo"></i></a>
+                            <a class="link link--light" href="#"><i class="fab fa-instagram fa-2x"
+                                    alt="Das Instagram Logo"></i></a>
+                        </div>
+                </section>
 
-        </ul>
-    </nav>
-</header>
-<h1>Only one h1 allowed & welcome</h1>
-{{ $slot }}
+                <section class="footer__section footer__section--x2">
+                    <h4 class="footer__heading">Nix mehr verpassen</h4>
+                        <form class="footer__section-items">
+                            <input type="text" placeholder="Enter Email" class="footer__mail-input">
+                            <input type="submit" class="footer__subscribe-button " value="Subscribe" src="">
+                        </form>
+                </section>
 
-<footer>
-    <i></i>
-    <section class="footer__follow">
-        <h4>Folge uns für Inspiration</h4>
-        <a href=""><img src="/images/facebook-logo.png" alt="Das Facebook Logo"></a>
-        <a href=""><img src="/images/twitter-logo.png" alt="Das Twitter Logo"></a>
-        <a href=""><img src="/images/instagram-logo.png" alt="Das Instagram Logo"></a>
-    </section>
-
-    <section class="footer__newsletter">
-        <h4> Nix mehr verpassen </h4>
-        <form>
-            <input type="text" placeholder="Enter Email" name="mail">
-            <input type="button" value="Subscribe" src="">
-        </form>
-    </section>
-
-    <section class="footer__contact">
-        <h4><a href="/impressum">Kontaktiere uns</a>
-            <i class="fab fa-whatsapp"></i></h4>
-        <a href=""><img src="/images/facebook-logo.png" alt="Das Instagram Logo"></a>
-        <a href=""><img src="/images/whatsapp-logo.png" alt="Das Instagram Logo"></a>
-
-    </section>
-</footer>
-</body>
+                <section class="footer__section">
+                    <h4 class="footer__heading">Kontaktiere uns</h4>
+                        <div class="footer__section-items">
+                            <a class="link link--light" href="#"><i class="fab fa-facebook fa-2x"
+                                    alt="Das Facebook Logo"></i></a>
+                            <a class="link link--light" href="#"><i class="fab fa-whatsapp fa-2x"
+                                    alt="Das WhatsApp Logo"></i></a>
+                        </div>
+                </section>
+            </div>
+        </footer>
+    </body>
 
 </html>
