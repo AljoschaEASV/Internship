@@ -18,6 +18,8 @@ class CreateGardensTable extends Migration
             $table->timestamps();
             $table->string('type');
             $table->integer('size');
+            $table->string('title');
+            $table->string('subtitle');
             $table->foreignId('address_id')->references('id')->on('addresses');
             $table->foreignId('user_id')->references('id')->on('users');
         });

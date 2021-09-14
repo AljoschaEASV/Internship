@@ -17,6 +17,7 @@ class CreateTentTypesTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name');
+            $table->string('icon');
             $table->text('description');
         });
     }

@@ -3,7 +3,7 @@
 <div class="gardens">
     @foreach ($gardens as $garden)
         <a class="gardens__card" href="#">
-            <img class="gardens__card-image" src="{{$garden->image}}">
+            <img class="gardens__card-image" src="{{$garden->image}}" alt="A beautiful garden">
             <div class="gardens__card-caption">
                 <h4 class="title">Where you go: </h4>
                 <p class="paragraph">{{ $garden->address->street }}</p>

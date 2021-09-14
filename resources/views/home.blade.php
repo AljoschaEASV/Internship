@@ -1,17 +1,17 @@
-<x-app>
-    <header class="header">
-        <img class="header__image" src="/images/camp.svg" alt="Zelt bei Nacht">
-        <div class="header__search">
-            <div class="header__search-inner">
-                <input class="header__search-input " placeholder="Wo willst du schlafen?">
-                <button class="header__search-button" type="submit">Search<i
-                        class="fas fa-search icon--styled"></i></button>
+<x-layouts.app>
+    <x-slot name="header">
+        <header class="header">
+            <img class="header__image" src="/images/camp.svg" alt="Zelt bei Nacht">
+            <div class="header__search">
+                <div class="header__search-inner">
+                    <input class="header__search-input" placeholder="Wo willst du schlafen?">
+                    <a href="gardens" class="link">
+                        <button class="header__search-button" type="submit">Search<i
+                                class="fas fa-search icon--styled"></i></button>
+                    </a>
+                </div>
             </div>
-        </div>
-    </header>
-    <main class="main">
-        <div class="main__inner">
-            <x-gardens :gardens="$gardens" />
-        </div>
-    </main>
-</x-app>
+        </header>
+    </x-slot>
+    <x-gardens :gardens="$gardens" />
+</x-layouts.app>

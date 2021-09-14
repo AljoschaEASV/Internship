@@ -4,13 +4,27 @@
     font-weight: bold;
     cursor: pointer;
     border: none;
+    height: 50px;
+    width: 100px;
+    transition: all 0.2s ease-in-out;
 
     &:hover {
-        background-color: $color-secondary;
+        background-color: $color-primary;
         color: $color-light;
     }
-    
-    &__search {
-        min-height: $elements-height-medium;
-    }
+}
+
+.button--m {
+    height: 50px;
+    width: 150px;
+}
+
+.button--l {
+    height: 50px;
+    width: 200px;
+}
+
+.button--search {
+    margin-left: 0;
+    min-height: 30px;
 }

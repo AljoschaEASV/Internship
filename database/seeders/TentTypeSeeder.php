@@ -19,8 +19,26 @@ class TentTypeSeeder extends Seeder
         DB::table('tent_types')->insert([
             [
                 'id' => 1,
-                'name' => "small",
-                'description' => "Small tents are for 1-3 persons. ",
+                'name' => 'Kleine Zelte',
+                'description' => 'Zelte für 1-3 Personen.',
+                'icon' => 'campground',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'id' => 2,
+                'name' => 'Größere Zelte',
+                'description' => 'Zelte für 3-6 Personen.',
+                'icon' => 'house-user',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+
+            ],
+            [
+                'id' => 3,
+                'name' => 'Auto Zelte',
+                'icon' => 'shuttle-van',
+                'description' => 'Zelte für 1-2 Personen.',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],

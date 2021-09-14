@@ -1,0 +1,40 @@
+.gardens-list {
+    align-items: center;
+    margin-top: $spacing-large;
+    margin-bottom: $spacing-large;
+}
+
+.gardens-list__item {
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    margin: $spacing-large;
+    background-color: $color-light;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.gardens-list__item-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: $spacing-large;
+}
+
+.gardens-list__item-image {
+    width: 300px;
+    height: 300px;
+}
+
+.gardens-list__amenities-list-item {
+    padding: $spacing-small;
+    background-color: lightgrey;
+    border-radius: 5px;
+}
+
+.gardens-list__tents {
+    display: flex;
+    gap: $spacing-x-large;
+    flex-flow: wrap;
+    justify-content: space-around;
+}

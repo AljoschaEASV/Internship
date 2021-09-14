@@ -18,6 +18,7 @@ class TentType extends Model
     protected $fillable = [
     'name',
     'description',
+    'icon'
   ];
 
     /**
