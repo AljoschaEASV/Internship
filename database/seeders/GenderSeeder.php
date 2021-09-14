@@ -18,19 +18,19 @@ class GenderSeeder extends Seeder
         DB::table('genders')->insert([
             [
                 'id' => 1,
-                'name' => "male",
+                'name' => 'male',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
             [
                 'id' => 2,
-                'name' => "female",
+                'name' => 'female',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
             [
                 'id' => 3,
-                'name' => "other",
+                'name' => 'other',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],

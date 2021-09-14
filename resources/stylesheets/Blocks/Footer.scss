@@ -42,21 +42,38 @@
     border-width: 1px;
     border-style: solid;
     border-color: $color-dark;
-    border-radius: 20px;
     text-align: center;
     outline: transparent;
     width: 100%;
     transition: filter ease;
 }
 
-.footer__subscribe-button {
-    color: $color-light;
-    border-radius: 60px;
-    border: none;
-    background-color: $color-secondary;
-    cursor: pointer;
+.footer__inner {
+    display: flex;
+    justify-content: space-between;
+    max-width: $container-max-width;
+    margin: 0 auto;
+}
 
-    &:hover {
-        filter: brightness(120%);
-    }
+.footer__section {
+    padding-right: $spacing-small;
+    margin-right: $spacing-small;
+    width: 300px;
+}
+
+.footer__section--x2 {
+    width: 600px;
+}
+
+.footer__heading {
+    border-bottom: 2px solid $color-light;
+    margin-bottom: $spacing-small;
+    text-align: center;
+    font-weight: bold;
+}
+
+.footer__section-items {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: $spacing-medium;
 }

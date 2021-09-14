@@ -23,6 +23,8 @@
     background-color: $color-secondary;
     cursor: pointer;
     transition: filter 200ms ease;
+    height: 60px;
+    width: 125px;
 
     &:hover {
         filter: brightness(120%);

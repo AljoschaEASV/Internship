@@ -28,6 +28,8 @@ class GardenFactory extends Factory
 
         return [
             'type' => $this->faker->sentence(2),
+            'title' => $this->faker->sentence(3),
+            'subtitle' => $this->faker->sentence(5),
             'size' => $this->faker->randomDigit,
             'user_id' => $user->id,
             'address_id' => $user->address->id,
@@ -45,7 +47,6 @@ class GardenFactory extends Factory
         return $this->afterCreating(function (Garden $garden) {
             $amenity = Amenity::all()->random();
             $tentType = TentType::all()->random();
-
             $garden->amenities()->attach($amenity);
             $garden->tentTypes()->attach($tentType);
         });

@@ -21,9 +21,9 @@ class AmenityFactory extends Factory
      */
     public function definition(): array
     {
-        $icons = collect('angellist', 'angry', 'campground', 'tint', 'accusoft');
+        $icons = collect(['baby-carriage', 'signal', 'bed', 'fireplace', 'dumbbell', 'paw', 'smoking-ban', 'shower']);
         return [
-            'name' => $this->faker->sentence(2),
+            'name' => $this->faker->word(),
             'icon' => $icons->random(),
         ];
     }
