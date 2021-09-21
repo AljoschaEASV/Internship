@@ -1,5 +1,7 @@
 .main {
     width: 100%;
+    overflow: hidden;
+    padding: 0 $spacing-large;
 }
 
 .main__inner {

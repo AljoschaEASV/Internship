@@ -17,8 +17,7 @@ $spacing-medium: 10px;
 $spacing-large: 20px;
 $spacing-x-large: 40px;
 $spacing-xx-large: 70px;
-$spacing-xx-large: 100px;
-$spacing-xxx-large: 150px;
+$spacing-xxx-large: 100px;
 
 $z-index-low: 10;
 $z-index-middle: 20;
@@ -27,8 +26,16 @@ $z-index-highest: 100;
 
 $color-primary: #043035;
 $color-secondary: #3daa4a;
+$color-secondary-light: #3daa4a;
+$color-grey-light: #fefefe;
 $color-light: #fff;
 $color-light-grey: #d3d3d3;
 $color-dark: #000;
 
+$breakpoint-phone: 576px;
+$breakpoint-tablet: 992px;
+$breakpoint-desktop: 1200px;
+
 $container-max-width: 1400px;
+
+$mobile-navigation-height: 85px;

@@ -8,7 +8,13 @@ html {
 body {
     line-height: $line-height-standard;
     text-rendering: optimizeLegibility;
+    padding-bottom: $mobile-navigation-height;
+
+    @media (min-width: $breakpoint-tablet) {
+        padding-bottom: 0;
+    }
 }
+
 
 a {
     text-decoration: underline;

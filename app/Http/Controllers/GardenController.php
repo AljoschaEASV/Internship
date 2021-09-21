@@ -7,7 +7,7 @@ use Illuminate\Contracts\Support\Renderable;
 
 class GardenController extends Controller
 {
-     /**
+    /**
      * Create the gardens list with all the gardens as properties.
      *
      * @return Renderable

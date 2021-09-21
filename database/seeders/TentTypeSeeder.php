@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use Carbon\Carbon;
-use Database\Factories\GardenFactory;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -32,7 +31,6 @@ class TentTypeSeeder extends Seeder
                 'icon' => 'house-user',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
-
             ],
             [
                 'id' => 3,

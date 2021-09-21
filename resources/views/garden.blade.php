@@ -15,7 +15,7 @@
             <div>
                 <h3>Oase im Grünen</h2>
                     <h6>Wer? Was?</h6>
-                    <button class="fa fa-user-circle fa-2x"></button>
+                    <button class="fa user-circle fa-2x"></button>
             </div>
             <article class="garden-details__product-details">
                 <p>
