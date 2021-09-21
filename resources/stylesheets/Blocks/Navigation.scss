@@ -30,7 +30,7 @@
 
 .nav__logo {
     display: none;
-
+    
     @media (min-width: $breakpoint-tablet) {
         height: 100%;
         display: inline-block;
