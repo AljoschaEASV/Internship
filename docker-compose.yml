@@ -30,7 +30,7 @@ services:
     container_name: temyga_application
     build:
       context: .
-      dockerfile: docker/application/application.Dockerfile
+      dockerfile: ./docker/application/application.Dockerfile
       args:
         USER_ID: $USER_ID
         GROUP_ID: $GROUP_ID
@@ -44,13 +44,12 @@ services:
       - stack
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.temyga.rule=Host(`temyga.localhost`,`temyga.localhost.visuellverstehen.de`)"
+      - "traefik.http.routers.temyga.rule=Host(`temyga.localhost`,`temyga.localhost.visuellverstehen.de`,`temyga.vscode.visuellverstehen.de`)"
       - "traefik.http.routers.temyga.entrypoints=web"
       - "traefik.http.services.temyga.loadbalancer.server.port=80"
       - "traefik.docker.network=web"
     working_dir: /var/www/html
     volumes:
-      - ./docker/application/php.ini:/usr/local/etc/php/php.ini:cached
       - ./:/var/www/html
     restart: always
 
@@ -58,7 +57,7 @@ services:
     container_name: temyga_tooling
     build:
       context: .
-      dockerfile: docker/tooling/tooling.Dockerfile
+      dockerfile: ./docker/tooling/tooling.Dockerfile
       args:
         USER_ID: $USER_ID
         GROUP_ID: $GROUP_ID

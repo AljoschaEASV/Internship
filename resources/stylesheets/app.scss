@@ -1,4 +1,4 @@
-@import 'Configuration/variables';
+@import 'Configuration/Variables';
 
 @import
   '~@fortawesome/fontawesome-free/scss/fontawesome.scss',
@@ -8,9 +8,9 @@
 
 @import
   '~minireset.css/minireset.sass',
-  'Configuration/mixins',
-  'Configuration/reset',
-  'Configuration/general';
+  'Configuration/Mixins',
+  'Configuration/Reset',
+  'Configuration/General';
 @import
     'Blocks/Button',
     'Blocks/Header',

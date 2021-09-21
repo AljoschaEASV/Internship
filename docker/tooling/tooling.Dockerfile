@@ -1,4 +1,4 @@
-FROM php:7.4-cli-buster
+FROM php:8.0-cli-bullseye
 
 # Define build arguments
 ARG USER_ID
@@ -38,8 +38,5 @@ RUN mv composer.phar /usr/local/bin/composer
 
 # Install Node.js
 RUN cd ~
-RUN curl -sL https://deb.nodesource.com/setup_15.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
 RUN apt-get install -y nodejs
-
-# Install gulp
-RUN npm install gulp-cli -g

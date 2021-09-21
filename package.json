@@ -2,48 +2,19 @@
     "private": true,
     "scripts": {
         "dev": "npm run development",
-        "development": "cross-env NODE_ENV=development node_modules/web",
-        "lint": "eslint ./resources/javascripts/**.js",
-        "mix": "mix watch"
+        "development": "mix",
+        "watch": "mix watch",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "hot": "mix watch --hot",
+        "prod": "npm run production",
+        "production": "mix --production"
     },
-    "main": "gulpfile.js",
     "devDependencies": {
-        "@babel/core": "^7.4.5",
-        "@babel/preset-env": "^7.4.5",
-        "autoprefixer": "^10.1.0",
-        "eslint": "^6.0.1",
-        "gulp": "^4.0.2",
-        "gulp-babel": "^8.0.0",
-        "gulp-concat": "^2.6.1",
-        "gulp-eslint": "^5.0.0",
-        "gulp-exec": "^4.0.0",
-        "gulp-imagemin": "^6.0.0",
-        "gulp-postcss": "^8.0.0",
-        "gulp-rename": "^1.4.0",
-        "gulp-sass": "^4.0.2",
-        "gulp-stylelint": "^9.0.0",
-        "gulp-uglify": "^3.0.2",
-        "laravel-mix": "^6.0.28",
-        "postcss": "^8.2.1",
-        "postcss-focus": "^4.0.0",
-        "postcss-import": "^12.0.1",
-        "resolve-url-loader": "^3.1.2",
-        "sass": "^1.32.11",
-        "sass-loader": "^11.0.1",
-        "stylelint": "^10.1.0",
-        "vue": "^2.6.12",
-        "vue-template-compiler": "^2.6.12"
-    },
-    "dependencies": {
         "@fortawesome/fontawesome-free": "^5.15.4",
-        "minireset.css": "^0.0.5"
-    },
-    "gitHooks": {
-        "pre-commit": "npm run lint"
-    },
-    "browserslist": [
-        "last 4 versions",
-        "> 5%",
-        "IE 11"
-    ]
+        "laravel-mix": "^6.0.6",
+        "minireset.css": "0.0.7",
+        "resolve-url-loader": "^4.0.0",
+        "sass": "^1.38.1",
+        "sass-loader": "^12.1.0"
+    }
 }

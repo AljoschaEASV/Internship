@@ -1,0 +1,80 @@
+stages:
+  - build
+  - test
+  - deploy
+
+build:
+  stage: build
+  tags:
+   - build
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+  cache:
+    paths:
+      - node_modules
+      - vendor
+  before_script:
+    - docker-compose --project-name temyga-web_application up -d --build
+  script:
+    - mkdir -p storage/framework/{sessions,views,cache}
+    - docker-compose --project-name temyga-web_application exec -T --user vvuser tooling composer install --optimize-autoloader --no-interaction
+    - docker-compose --project-name temyga-web_application exec -T --user vvuser tooling npm ci
+    - docker-compose --project-name temyga-web_application exec -T --user vvuser tooling npm run production
+  after_script:
+    - docker-compose --project-name temyga-web_application down
+
+test:
+  stage: test
+  tags:
+    - test
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+  variables:
+    GIT_STRATEGY: none
+    GIT_SUBMODULE_STRATEGY: none
+  before_script:
+    - docker-compose --project-name temyga-web_application up -d
+  script:
+    - docker-compose --project-name temyga-web_application exec -T --user vvuser application php artisan test
+  after_script:
+    - docker-compose --project-name temyga-web_application down
+
+deploy:
+  environment:
+    name: live
+    url: https://temyga.visuel.dev
+  stage: deploy
+  tags:
+    - deploy
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == "master"'
+  variables:
+    GIT_STRATEGY: none
+    GIT_SUBMODULE_STRATEGY: none
+  before_script:
+    - docker-compose --project-name temyga-web_application up -d
+    - docker-compose --project-name temyga-web_application exec -T --user vvuser tooling composer install --optimize-autoloader --no-interaction --no-dev
+  script:
+    - eval `ssh-agent -s`
+    - ssh-add
+    - >
+      ssh p598604@p598604.mittwaldserver.info "
+        cd /html/laravel/ && php artisan down
+      "
+    - >
+      rsync -av -e "ssh" --delete --exclude="public/storage"
+      app bootstrap config database public routes resources vendor artisan
+      p598604@p598604.mittwaldserver.info:/html/laravel/
+    - >
+      rsync -av -e "ssh"
+      composer.json
+      p598604@p598604.mittwaldserver.info:/html/laravel/
+    - >
+      ssh p598604@p598604.mittwaldserver.info "
+        cd /html/laravel/ &&
+        php artisan optimize:clear &&
+        php artisan optimize &&
+        php artisan up
+      "
+  after_script:
+    - docker-compose --project-name temyga-web_application down
