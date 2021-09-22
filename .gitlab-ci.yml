@@ -1,5 +1,6 @@
 stages:
   - build
+  - inspect
   - test
   - deploy
 
@@ -20,6 +21,24 @@ build:
     - docker-compose --project-name temyga-web_application exec -T --user vvuser tooling composer install --optimize-autoloader --no-interaction
     - docker-compose --project-name temyga-web_application exec -T --user vvuser tooling npm ci
     - docker-compose --project-name temyga-web_application exec -T --user vvuser tooling npm run production
+  after_script:
+    - docker-compose --project-name temyga-web_application down
+
+inspect:
+  stage: inspect
+  tags:
+   - inspect
+  needs:
+   - build
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+  variables:
+    GIT_STRATEGY: none
+    GIT_SUBMODULE_STRATEGY: none
+  before_script:
+    - docker-compose --project-name temyga-web_application up -d
+  script:
+    - docker-compose --project-name temyga-web_application exec -T --user vvuser tooling ./vendor/bin/php-cs-fixer fix --dry-run --diff -vv
   after_script:
     - docker-compose --project-name temyga-web_application down
 

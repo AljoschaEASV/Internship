@@ -33,7 +33,7 @@ class GardenFactory extends Factory
             'size' => $this->faker->randomDigit,
             'user_id' => $user->id,
             'address_id' => $user->address->id,
-            'image' =>  'http://lorempixel.com/' . random_int(600, 1000) . '/' . random_int(600, 1000) . '/nature'
+            'image' =>  'http://lorempixel.com/' . random_int(600, 1000) . '/' . random_int(600, 1000) . '/nature',
         ];
     }
 
@@ -42,7 +42,7 @@ class GardenFactory extends Factory
      *
      * @return GardenFactory
      */
-    public function configure(): GardenFactory
+    public function configure(): self
     {
         return $this->afterCreating(function (Garden $garden) {
             $amenity = Amenity::all()->random();
