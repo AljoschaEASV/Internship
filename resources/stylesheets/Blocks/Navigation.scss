@@ -30,7 +30,7 @@
 
 .nav__logo {
     display: none;
-    
+
     @media (min-width: $breakpoint-tablet) {
         height: 100%;
         display: inline-block;
@@ -98,7 +98,7 @@
 
 .nav__dropdown-content-inner {
     background-color: $color-primary;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: $box-shadow-default;
     padding: $spacing-medium $spacing-large;
     border-radius: 10px;
     position: relative;
