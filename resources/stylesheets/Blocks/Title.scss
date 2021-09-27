@@ -1,6 +1,35 @@
-.title {
-    margin-bottom: $spacing-small;
-    font-family: $font-family-standard;
-    font-size: $font-size-l;
-    color: $color-dark;
+.title,
+.title--l {
+  margin-bottom: $spacing-small;
+  font-family: $font-family-standard;
+  font-size: $font-size-l;
+  color: $color-dark;
+}
+
+.title--xxs {
+  font-size: $font-size-xxs;
+}
+
+.title--xs {
+  font-size: $font-size-xs;
+}
+
+.title--s {
+  font-size: $font-size-s;
+}
+
+.title--m {
+  font-size: $font-size-m;
+}
+
+.title--xl {
+  font-size: $font-size-xl;
+}
+
+.title--xxl {
+  font-size: $font-size-xxl;
+}
+
+.title--bold {
+  font-weight: bold;
 }

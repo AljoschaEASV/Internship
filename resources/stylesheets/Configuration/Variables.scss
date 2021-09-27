@@ -2,10 +2,12 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
 $font-size-standard: 18px;
 
 $font-size-xxs: 0.675rem;
+$font-size-xs: 0.75rem;
 $font-size-s: 0.875rem;
 $font-size-m: 1rem;
 $font-size-l: 1.25rem;
-$font-size-xl: 2rem;
+$font-size-xl: 1.5rem;
+$font-size-xxl: 2rem;
 
 $line-height-standard: 1.5;
 $line-height-headlines: 1.2;
@@ -25,11 +27,12 @@ $z-index-high: 30;
 $z-index-highest: 100;
 
 $color-primary: #043035;
+$color-primary-light: lighten($color-primary, 20%);
 $color-secondary: #3daa4a;
-$color-secondary-light: #3daa4a;
+$color-secondary-light: lighten($color-secondary, 20%);
 $color-grey-light: #fefefe;
 $color-light: #fff;
-$color-light-grey: #d3d3d3;
+$color-light-grey: #808080;
 $color-dark: #000;
 
 $breakpoint-phone: 576px;

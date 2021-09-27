@@ -1,0 +1,32 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-large;
+  padding: $spacing-large 0;
+
+  @media (min-width: $breakpoint-phone) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.profile__picture {
+  padding: $spacing-medium 0;
+  object-fit: cover;
+
+  @media (min-width: $breakpoint-phone) {
+    width: 200px;
+    height: 250px;
+    padding: $spacing-small 0;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 300px;
+    height: 400px;
+  }
+  
+  @media (min-width: $breakpoint-desktop) {
+    width: 500px;
+    height: 600px;
+  }
+}

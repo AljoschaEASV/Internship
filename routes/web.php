@@ -4,6 +4,7 @@ use App\Http\Controllers\GardenController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,11 +16,12 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Auth::routes();
 
 Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/gardens', [GardenController::class, 'index'])->name('gardens');
+
+Route::get('/users/{user}', [UserController::class, 'show'])->name('user');
 
 Route::get('/gardens/{garden}', [GardenController::class, 'show'])->name('garden-details');
