@@ -4,11 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>TentMyGarden - Wo Zelte Gärten finden</title>
-
-    <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
@@ -40,9 +37,7 @@
             </div>
         </div>
     </nav>
-
     {{ $header ?? '' }}
-
     <main class="main">
         <div class="main__inner">
             {{ $slot }}
