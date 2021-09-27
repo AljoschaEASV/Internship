@@ -67,7 +67,7 @@
                     <button type="submit" class="button">Subscribe</button>
                 </form>
             </section>
-            <section class=" footer__section">
+            <section class="footer__section">
                 <h4 class="footer__heading">Kontaktiere uns</h4>
                 <div class="footer__section-items">
                     <a class="link link--light" href="#"><i class="fab fa-facebook fa-2x"

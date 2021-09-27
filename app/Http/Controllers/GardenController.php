@@ -16,4 +16,15 @@ class GardenController extends Controller
     {
         return view('gardens-list')->with('gardens', Garden::all());
     }
+
+    /**
+     * Create garden details with a garden a parameter.
+     *
+     * @param Garden $garden
+     * @return Renderable
+     */
+    public function show(Garden $garden): Renderable
+    {
+        return view('garden-details')->with('garden', $garden);
+    }
 }

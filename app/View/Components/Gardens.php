@@ -2,7 +2,6 @@
 
 namespace App\View\Components;
 
-use App\Models\Garden;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\View\View;
 use Illuminate\View\Component;

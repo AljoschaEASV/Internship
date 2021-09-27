@@ -18,9 +18,8 @@ use Illuminate\Support\Facades\Auth;
 
 Auth::routes();
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index']);
 
-Route::get(
-    '/gardens',
-    [GardenController::class, 'index']
-)->name('gardens');
+Route::get('/gardens', [GardenController::class, 'index'])->name('gardens');
+
+Route::get('/gardens/{garden}', [GardenController::class, 'show'])->name('garden-details');
