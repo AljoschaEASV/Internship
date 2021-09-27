@@ -2,8 +2,8 @@
 
 | –              | –                                       |
 | ------         | ------                                  |
-| vvcode         | temyga                                 |
-| p-number       |                                 |
-| Namespace      | `VV\Temyga`                          |
-| Live-System    | https://temyga.dev.visuellverstehen.de |
+| vvcode         | temyga                                  |
+| p-number       |                                         |
+| Namespace      | `VV\Temyga`                             |
+| Live-System    | https://temyga.visuel.dev               |
 | Test-System    | no                                      |
