@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Storage;
 
 class User extends Authenticatable
 {
@@ -20,11 +21,66 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name',
+        'first_name',
+        'last_name',
+        'date_of_birth',
+        'profile_picture',
         'lastName',
         'email',
         'password',
+        'gender_id',
+        'address_id',
     ];
+
+    /**
+     * Getter for the image.
+     *
+     * @param string $profilePicture
+     * @return string
+     */
+    public function getProfilePictureAttribute(string $profilePicture): string
+    {
+        return Storage::url($profilePicture);
+    }
+
+    /**
+     * The eloquent accessor, which will, given the setAttributeAttribute Syntax,
+     * run the provided data against that method and change it to upper case.
+     *
+     * @param string $firstName
+     * @return string
+     */
+    public function getfirstNameAttribute(string $firstName): string
+    {
+        return ucwords($firstName);
+    }
+
+    /**
+     * The eloquent accessor, which will, given the setAttributeAttribute Syntax,
+     * run the provided data against that method and change it to upper case.
+     *
+     * @param string $lastName
+     * @return string
+     */
+    public function getLastNameAttribute(string $lastName): string
+    {
+        return ucwords($lastName);
+    }
+
+    /**
+     * The eloquent mutator, which will, given the setAttributeAttribute Syntax
+     * Which means we pass the external attribute to the model.
+     * Where the given attribute always will be changed in the underlying array.
+     *
+     * This is Mutating
+     *
+     * @param string $password
+     * @return void
+     */
+    public function setPasswordAttribute(string $password): void
+    {
+        $this->attributes['password'] = bcrypt($password);
+    }
 
     /**
      * The attributes that should be hidden for arrays.
@@ -43,6 +99,7 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'date_of_birth' => 'datetime',
     ];
 
     /**

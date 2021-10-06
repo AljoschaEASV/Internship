@@ -1,0 +1,12 @@
+.input__field {
+  padding: $spacing-medium + $spacing-small;
+  text-align: left;
+  width: 100%;
+  border: none;
+  box-shadow: $box-shadow-default;
+}
+
+.input__label {
+  display: block;
+  margin-bottom: $spacing-medium;
+}

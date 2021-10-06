@@ -1,4 +1,4 @@
-<x-app>
+<x-layouts.app>
     <div class="garden-details__container">
         <div class="garden-details__inner-container">
             <div class="garden-details__">
@@ -34,4 +34,4 @@
             <x-availability-card />
         </div>
     </div>
-</x-app>
+</x-layouts.app>

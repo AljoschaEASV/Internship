@@ -136,8 +136,8 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'gender_id' => [
+            'integer' => 'The gender must be specified.',
         ],
     ],
 

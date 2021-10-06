@@ -35,19 +35,6 @@
   padding-top: $spacing-medium;
 }
 
-.footer__mail-input {
-  padding: $spacing-small;
-  margin-right: $spacing-medium;
-  font-size: $font-size-l;
-  border-width: 1px;
-  border-style: solid;
-  border-color: $color-dark;
-  text-align: center;
-  outline: transparent;
-  width: 100%;
-  transition: filter ease;
-}
-
 .footer__inner {
   display: flex;
   justify-content: space-between;

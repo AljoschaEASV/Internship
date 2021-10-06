@@ -1,7 +1,7 @@
 <x-layouts.app>
     <div class="gardens-list">
         @foreach ($gardens as $garden)
-            <a class="link" href="{{ route('garden-details', ['id' => $garden->id]) }}">
+            <a class="link" href="{{ route('gardens', ['garden' => $garden->id]) }}">
                 <figure class="gardens-list__item">
                     <img class="gardens-list__item-image" src="{{ $garden->image }}" alt="random photo">
                     <figcaption class="gardens-list__item-content">
@@ -34,6 +34,11 @@
                         <button class="button button--m">Auswählen</button>
                     </figcaption>
                 </figure>
+                @if (session()->has('success'))
+                    <div class="message">
+                        {{ session()->get('success') }}
+                    </div>
+                @endif
             </a>
         @endforeach
     </div>
