@@ -2,4 +2,10 @@
   color: $color-dark;
   font-family: $font-family-standard;
   margin-bottom: $spacing-large;
+
+  &--error {
+    color: $color-error;
+    margin: 0;
+    font-size: $font-size-xxs;
+  }
 }

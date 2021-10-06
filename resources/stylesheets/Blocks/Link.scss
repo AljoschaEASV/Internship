@@ -1,8 +1,13 @@
 .link {
   text-decoration: none;
   color: $color-primary;
+  white-space: nowrap;
 }
 
 .link--light {
   color: $color-light;
+}
+
+.link--bold {
+  font-weight: bold;
 }

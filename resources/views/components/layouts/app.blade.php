@@ -14,13 +14,26 @@
         <div class="nav__inner flex">
             <div class="nav__desktop">
                 <a class="nav__link" href="/">
-                    <img class="nav__logo" src="/images/lion.svg" alt="Das Logo der Website.">
+                    <img class="nav__logo" src="/images/logo.svg" alt="Das Logo der Website.">
                 </a>
                 <div class="nav__dropdown">
-                    <img class="nav__user" src="/images/guy.jpg" alt="Das Logo des Users.">
+                    @guest
+                        <i class="nav__user fa fa-user"></i>
+                    @endguest
+                    @auth
+                        <img class="nav__user nav__profile-picture" src="{{ auth()->user()->profile_picture }}"
+                            alt="Das Logo des Users.">
+                    @endauth
                     <div class="nav__dropdown-content">
                         <div class="nav__dropdown-content-inner">
-                            <a class="nav__link" href="#">Profil</a>
+                            @auth
+                                <a class="link nav__link" href="/users/{{ Auth::id() }}">Profile</a>
+                                <a class="nav__link" href="/logout">Logout</a>
+                            @endauth
+                            @guest
+                                <a class="link nav__link" href="/register">Register</a>
+                                <a class="link nav__link" href="/login">Login</a>
+                            @endguest
                         </div>
                     </div>
                 </div>
@@ -48,31 +61,37 @@
             <section class="footer__section">
                 <h4 class="footer__heading">Folge uns</h4>
                 <div class="footer__section-items">
-                    <a class="link link--light" href="#"><i class="fab fa-facebook fa-2x"
+                    <a class="link link--light link--bold " href="#"><i class="fab fa-facebook fa-2x"
                             alt="Das Facebook Logo"></i></a>
-                    <a class="link link--light" href="#"><i class="fab fa-twitter fa-2x" alt="Das Twitter Logo"></i></a>
-                    <a class="link link--light" href="#"><i class="fab fa-instagram fa-2x"
+                    <a class="link link--light link--bold " href="#"><i class="fab fa-twitter fa-2x"
+                            alt="Das Twitter Logo"></i></a>
+                    <a class="link link--light link--bold " href="#"><i class="fab fa-instagram fa-2x"
                             alt="Das Instagram Logo"></i></a>
                 </div>
             </section>
             <section class="footer__section footer__section--x2">
                 <h4 class="footer__heading">Nichts mehr verpassen</h4>
                 <form class="footer__section-items">
-                    <input type="text" placeholder="Enter Email" class="footer__mail-input">
+                    <input type="text" placeholder="Enter Email" class="input__field">
                     <button type="submit" class="button">Subscribe</button>
                 </form>
             </section>
             <section class="footer__section">
                 <h4 class="footer__heading">Kontaktiere uns</h4>
                 <div class="footer__section-items">
-                    <a class="link link--light" href="#"><i class="fab fa-facebook fa-2x"
+                    <a class="link link--light link--bold" href="#"><i class="fab fa-facebook fa-2x"
                             alt="Das Facebook Logo"></i></a>
-                    <a class="link link--light" href="#"><i class="fab fa-whatsapp fa-2x"
+                    <a class="link link--light link--bold" href="#"><i class="fab fa-whatsapp fa-2x"
                             alt="Das WhatsApp Logo"></i></a>
                 </div>
             </section>
         </div>
     </footer>
+    @if (session()->has('success'))
+        <div class="message">
+            {{ session()->get('success') }}
+        </div>
+    @endif
 </body>
 
 </html>
