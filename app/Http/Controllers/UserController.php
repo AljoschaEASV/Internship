@@ -50,7 +50,7 @@ class UserController extends Controller
 
         $image = request()->file('profile_picture');
 
-        $userAttributes['profile_picture'] = $image->storePubliclyAs('/public/users/', $image->hashName());
+        $userAttributes['profile_picture'] = $image->storePubliclyAs('/public/users', $image->hashName());
 
         $addressAttributes['country_code'] = 'DE';
         $address = Address::create($addressAttributes);
