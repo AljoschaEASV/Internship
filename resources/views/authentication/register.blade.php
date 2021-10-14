@@ -9,7 +9,7 @@
                     </label>
                     <select class="select" name="gender_id" id="gender_id" value="{{ old('gender_id') }}">
                         <option selected disabled>Choose</option>
-                        @foreach($genders as $gender)
+                        @foreach ($genders as $gender)
                             <option value="{{ $gender->id }}">{{ ucfirst($gender->name) }}</option>
                         @endforeach
                     </select>
@@ -18,7 +18,7 @@
                     <label class="input__label" for="profile_picture">
                         Profile Picture
                     </label>
-                    <input class="input" type="file" name="profile_picture" id="profile_picture" required>
+                    <input class="input__field" type="file" name="profile_picture" id="profile_picture" required>
                 </div>
                 <div class="input">
                     <label class="input__label" for="first_name">
@@ -35,13 +35,13 @@
                         value="{{ old('last_name') }}">
                 </div>
                 <div class="input">
-                    <label class="input__label" for="date_of_birth">Birthday:</label>
+                    <label class="input__label" for="date_of_birth">Birthday</label>
                     <input class="input__field" type="date" id="date_of_birth" name="date_of_birth">
                 </div>
                 <div class="input">
                     <label class="
                         input__label" for="email">
-                        Email
+                        E-Mail
                     </label>
                     <input class="input__field" type="email" name="email" id="email" required
                         value="{{ old('email') }}" autocomple="off">
@@ -76,16 +76,15 @@
                 </div>
                 <div class="input">
                     <label class="input__label" for="city">
-                        city
+                        City
                     </label>
                     <input class="input__field" type="text" name="city" id="city" required
                         value="{{ old('city') }}">
                 </div>
-                <div class="input__street-number">
+                <div class="input">
                     <label class="input__label" for="street_number">
                     </label>
                     Street Number
-
                     <input class="input__field" type="text" name="street_number" id="street_number" required
                         value="{{ old('street_number') }}">
                 </div>
@@ -96,8 +95,9 @@
                         @endforeach
                     </ul>
                 @endif
-                <button type="submit" class="button button--m">Submit</button>
+                <button type="submit" class="button button--m">Register</button>
             </form>
+            <a class="button button--l" href="/login">Already Registered?</a>
         </div>
     </section>
 </x-layouts.app>

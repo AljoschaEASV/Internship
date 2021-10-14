@@ -8,12 +8,16 @@
 }
 
 .garden-detail__image {
-  width: 100%;
+  max-width: 100%;
   display: flex;
   flex-flow: row wrap;
   padding: $spacing-medium;
   margin: $spacing-small;
   box-shadow: $box-shadow-default;
+
+  @media (min-width: $breakpoint-tablet) {
+    max-width: 50%;
+  }
 }
 
 .garden-detail__caption {

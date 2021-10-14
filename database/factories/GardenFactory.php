@@ -27,10 +27,8 @@ class GardenFactory extends Factory
         $user = User::all()->random();
 
         return [
-            'type' => $this->faker->sentence(2),
             'title' => $this->faker->sentence(3),
             'subtitle' => $this->faker->sentence(5),
-            'size' => $this->faker->randomDigit,
             'user_id' => $user->id,
             'address_id' => $user->address->id,
             'image' =>  'http://lorempixel.com/' . random_int(600, 1000) . '/' . random_int(600, 1000) . '/nature',

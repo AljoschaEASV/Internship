@@ -22,6 +22,7 @@ class Address extends Model
         'country_code',
         'city',
         'street_number',
+        'country_code',
     ];
 
     /**

@@ -22,14 +22,30 @@
 }
 
 .gardens-list__item-image {
-  width: 300px;
-  height: 300px;
+  object-fit: cover;
+  width: 100%;
+  height: 75%;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+.gardens-list__amenities-list {
+  display: flex;
+  align-items: flex-start;
 }
 
 .gardens-list__amenities-list-item {
   padding: $spacing-small;
-  background-color: lightgrey;
+  margin: $spacing-small;
+  background-color: $color-light-grey;
+  color: $color-light;
+  min-width: 60px;
+  align-items: center;
   border-radius: 5px;
+  padding: 0 $spacing-large;
 }
 
 .gardens-list__tents {

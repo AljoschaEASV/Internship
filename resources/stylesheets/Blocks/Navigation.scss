@@ -49,30 +49,10 @@
   color: $color-secondary;
   border-radius: 50px;
   align-content: center;
+  object-fit: cover;
 
   @media (min-width: $breakpoint-tablet) {
     align-content: auto;
-  }
-}
-
-.nav__link {
-  display: inline-block;
-  height: 100%;
-  text-decoration: none;
-  color: $color-light;
-  font-size: $font-size-m;
-  text-align: center;
-  transition: filter 200ms ease;
-  padding: 0 $spacing-large;
-  white-space: nowrap;
-
-  &:hover {
-    filter: brightness(90%);
-    cursor: pointer;
-  }
-
-  @media (min-width: $breakpoint-tablet) {
-    padding: 0;
   }
 }
 
@@ -132,5 +112,26 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+  }
+}
+
+.nav__link {
+  display: inline-block;
+  height: 100%;
+  text-decoration: none;
+  color: $color-light;
+  font-size: $font-size-m;
+  text-align: center;
+  transition: filter 200ms ease;
+  padding: 0 $spacing-large;
+  white-space: nowrap;
+
+  &:hover {
+    filter: brightness(90%);
+    cursor: pointer;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    padding: 0;
   }
 }
