@@ -91,8 +91,10 @@ deploy:
     - >
       ssh p598604@p598604.mittwaldserver.info "
         cd /html/laravel/ &&
+        php artisan migrate --force &&
         php artisan optimize:clear &&
         php artisan optimize &&
+        php artisan storage:link &&
         php artisan up
       "
   after_script:
