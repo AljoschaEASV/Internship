@@ -2,11 +2,16 @@
   color: $color-light;
   background-color: $color-secondary;
   font-weight: bold;
+  font-size: $font-size-s;
   cursor: pointer;
   border: none;
   height: 50px;
   width: 100px;
   transition: all 0.2s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
 
   &:hover {
     background-color: $color-primary;

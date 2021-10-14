@@ -18,9 +18,7 @@
 }
 
 // Remove default styles from input on iOS – http://stackoverflow.com/questions/7599533/ios-forces-rounded-corners-and-glare-on-inputs
-input,
 textarea {
-  -webkit-appearance: none;
   border-radius: 0;
 }
 

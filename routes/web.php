@@ -19,8 +19,6 @@ use App\Http\Controllers\AuthController;
 
 Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/gardens', [GardenController::class, 'index'])->name('gardens');
-
 Route::get('/users/{user}', [UserController::class, 'show'])->name('user');
 Route::post('/users', [UserController::class, 'store'])->middleware('guest');
 
@@ -28,3 +26,8 @@ Route::get('/register', [AuthController::class, 'register'])->middleware('guest'
 Route::get('/login', [AuthController::class, 'login'])->middleware('guest')->name('login');
 Route::post('/authenticate', [AuthController::class, 'authenticate'])->middleware('guest');
 Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth');
+
+Route::get('/gardens', [GardenController::class, 'index'])->name('gardens');
+Route::get('/gardens/create', [GardenController::class, 'create'])->middleware('auth');
+Route::get('/gardens/{garden}', [GardenController::class, 'show'])->name('garden-details');
+Route::post('/gardens', [GardenController::class, 'store']);

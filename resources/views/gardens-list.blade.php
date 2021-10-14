@@ -1,37 +1,29 @@
 <x-layouts.app>
     <div class="gardens-list">
         @foreach ($gardens as $garden)
-            <a class="link" href="{{ route('gardens', ['garden' => $garden->id]) }}">
+            <a class="link" href="{{ route('garden-details', ['garden' => $garden->id]) }}">
                 <figure class="gardens-list__item">
-                    <img class="gardens-list__item-image" src="{{ $garden->image }}" alt="random photo">
+                    <img class="gardens-list__item-image" src="{{ $garden->image }}" alt="A beautiful garden">
                     <figcaption class="gardens-list__item-content">
                         <h2 class="title"><b>{{ $garden->title }}</b></h2>
                         <small class="paragraph">{{ $garden->address->zip_code }} {{ $garden->address->city }},
                             {{ $garden->address->street }} {{ $garden->address->street_number }}</small>
                         <div class="garden-list__categories">
                             <div class="gardens-list__tents">
-                                <h2 class="title">Zelte</h2>
+                                <h2 class="title">Tents you can place</h2>
                                 @foreach ($garden->tentTypes as $type)
                                     <p class="paragraph">{{ $type->name }}</p>
                                 @endforeach
                             </div>
-                            <div class="gardens-list__amenities">
-                                <h2 class="title">Ausstattung</h2>
+                            <h2 class="title">Amenities</h2>
+                            <div class="gardens-list__amenities-list">
                                 @foreach ($garden->amenities as $amenity)
-                                    <div class="gardens-list__amenities-list">
-                                        <span class="gardens-list__amenities-list-item"><i
-                                                class="fas fa-{{ $amenity->icon }}"></i>&nbsp;{{ $amenity->name }}</span>
-                                        <span class="gardens-list__amenities-list-item"><i
-                                                class="fas fa-{{ $amenity->icon }}"></i>&nbsp;{{ $amenity->name }}</span>
-                                        <span class="gardens-list__amenities-list-item"><i
-                                                class="fas fa-{{ $amenity->icon }}"></i>&nbsp;{{ $amenity->name }}</span>
-                                        <span class="gardens-list__amenities-list-item"><i
-                                                class="fas fa-{{ $amenity->icon }}"></i>&nbsp;{{ $amenity->name }}</span>
-                                    </div>
+                                    <span class="gardens-list__amenities-list-item"><i
+                                            class="fas fa-{{ $amenity->icon }}"></i></span>
                                 @endforeach
                             </div>
                         </div>
-                        <button class="button button--m">Auswählen</button>
+                        <button class="button button--m">Choose</button>
                     </figcaption>
                 </figure>
                 @if (session()->has('success'))

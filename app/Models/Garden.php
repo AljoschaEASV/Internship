@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Support\Facades\Storage;
 
 class Garden extends Model
 {
@@ -17,10 +18,22 @@ class Garden extends Model
      * @var array
      */
     protected $fillable = [
-        'name',
+        'title',
+        'subtitle',
+        'address_id',
+        'user_id',
         'description',
         'image',
     ];
+
+    /**
+     * @param string $image
+     * @return string
+     */
+    public function getImageAttribute(string $image): string
+    {
+        return Storage::url($image);
+    }
 
     /**
      * @return BelongsToMany
