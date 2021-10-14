@@ -37,7 +37,7 @@ class UserController extends Controller
             'last_name' => ['required', 'max:191'],
             'password' => ['required', 'confirmed', 'min:7'],
             'date_of_birth' => ['required'],
-            'gender_id' => ['required', 'integer', 'between:1,3'],
+            'gender_id' => ['required', 'integer'],
             'email' => ['required', 'max:191', 'email', Rule::unique('users', 'email')],
         ]);
 
