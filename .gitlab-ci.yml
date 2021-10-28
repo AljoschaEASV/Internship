@@ -7,7 +7,7 @@ stages:
 build:
   stage: build
   tags:
-   - build
+    - build
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
   cache:
@@ -27,9 +27,9 @@ build:
 inspect:
   stage: inspect
   tags:
-   - inspect
+    - inspect
   needs:
-   - build
+    - build
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
   variables:
